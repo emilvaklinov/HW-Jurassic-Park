@@ -31,7 +31,7 @@ describe('Park', function() {
   });
 
   it('should have number of days open', function (){
-    assert.deepStrictEqual(park.daysOpen, 315);
+    assert.deepStrictEqual(park.daysOpen, 360);
   });
 
   it('should be able to add a dinosaur to its collection', function (){
@@ -71,11 +71,11 @@ describe('Park', function() {
   });
 
   it('should be able to calculate visitors per year', function() {
-    assert.strictEqual(park.getVisitorsByYear(), 70 * 315);
+    assert.strictEqual(park.getVisitorsByYear(), 70 * 360);
   });
 
   it('should be able to calculate revenue for a year', function() {
-    assert.strictEqual(park.getRevenueByYear(), 70 * 315 * 45);
+    assert.strictEqual(park.getRevenueByYear(), 70 * 360 * 45);
   })
 
   it('should be able to provide a count of each diet type', function() {

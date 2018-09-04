@@ -1,4 +1,4 @@
-const Park = function (name, ticketPrice, dinosaurs, daysOpen = 315){
+const Park = function (name, ticketPrice, dinosaurs, daysOpen = 360){
   this.daysOpen = daysOpen;
   this.name = name;
   this.ticketPrice = ticketPrice;
