@@ -12,7 +12,7 @@ describe('Park', function() {
   beforeEach(function () {
     dinosaurs = [
       new Dinosaur('t-rex', 'carnivore', 50),
-      new Dinosaur('Iguanodon', 'herbivore', 10)
+      new Dinosaur('Mastodon', 'herbivore', 20)
     ];
     dinosaur = new Dinosaur("Velosirapaptor", "omnivore", 55);
     park = new Park("Jurrasicpark", 45, dinosaurs);
@@ -31,7 +31,7 @@ describe('Park', function() {
   });
 
   it('should have number of days open', function (){
-    assert.deepStrictEqual(park.daysOpen, 365);
+    assert.deepStrictEqual(park.daysOpen, 315);
   });
 
   it('should be able to add a dinosaur to its collection', function (){
@@ -53,34 +53,34 @@ describe('Park', function() {
 
   it('should be able to find all dinosaurs of a particular species', function (){
     park.addDinosaur(dinosaur);
-    const dinosaur2 = new Dinosaur("Velosirapaptor", "omnivore", 20);
+    const dinosaur2 = new Dinosaur("Velosirapaptor", "omnivore", 55);
     park.addDinosaur(dinosaur2);
     assert.deepStrictEqual(park.getBySpecies("Velosirapaptor"), [dinosaur, dinosaur2]);
   });
 
   it('should be able to remove all dinosaurs of a particular species', function (){
     park.addDinosaur(dinosaur);
-    const dinosaur2 = new Dinosaur("Velosirapaptor", "omnivore", 20);
+    const dinosaur2 = new Dinosaur("Velosirapaptor", "omnivore", 55);
     park.addDinosaur(dinosaur2);
     park.removeBySpecies("Velosirapaptor")
     assert.deepStrictEqual(park.dinosaurs, dinosaurs);
   });
 
   it('should be able to calculate visitors per day', function() {
-    assert.strictEqual(park.getVisitorsByDay(), 60);
+    assert.strictEqual(park.getVisitorsByDay(), 70);
   });
 
   it('should be able to calculate visitors per year', function() {
-    assert.strictEqual(park.getVisitorsByYear(), 60 * 365);
+    assert.strictEqual(park.getVisitorsByYear(), 70 * 315);
   });
 
   it('should be able to calculate revenue for a year', function() {
-    assert.strictEqual(park.getRevenueByYear(), 60 * 365 * 45);
+    assert.strictEqual(park.getRevenueByYear(), 70 * 315 * 45);
   })
 
   it('should be able to provide a count of each diet type', function() {
     park.addDinosaur(dinosaur);
-    const dinosaur2 = new Dinosaur("Velosirapaptor", "omnivore", 20);
+    const dinosaur2 = new Dinosaur("Velosirapaptor", "omnivore", 55);
     park.addDinosaur(dinosaur2);
     const expected = {
       omnivore: 2,
